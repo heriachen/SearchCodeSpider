@@ -15,9 +15,6 @@ def getmaxpage(key):
     html.encoding = 'utf-8' #这一行是将编码转为utf-8否则中文会显示乱码。
     filename = open('write.html', 'w', encoding="utf-8")
     filename.write(html.text)
-    '''filename = 'write.html'
-    with open(filename,'w') as f: # 如果filename不存在会自动创建， 'w'表示写数据，写之前会清空文件中的原有数据！
-        f.write(html.text)'''
     try:
         soup = BeautifulSoup(open('write.html','r', encoding='UTF-8'))
         for tag in soup.find_all('span', class_='page'):
